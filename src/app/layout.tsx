@@ -17,12 +17,22 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'MultiV — Verification Bot',
+  title: 'MultiV — Professional Verification Bot',
   description: 'Secure your Discord server with MultiV. 7 verification methods, real-time logs, CAPTCHA, and more.',
   keywords: 'discord bot, verification, captcha, anti-spam, moderation',
   openGraph: {
-    title: 'MultiV Dashboard',
-    description: 'Manage your verification system with ease.',
+    title: 'MultiV — Professional Verification Bot',
+    description: 'Secure your Discord server with MultiV. 7 verification methods, real-time logs, CAPTCHA, and more.',
+    url: 'https://multi-v.netlify.app',
+    siteName: 'MultiV',
+    images: [
+      {
+        url: 'https://multi-v.netlify.app/icon.png',
+        width: 256,
+        height: 256,
+        alt: 'MultiV',
+      },
+    ],
     type: 'website',
   },
 }
