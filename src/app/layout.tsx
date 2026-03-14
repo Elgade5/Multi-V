@@ -17,7 +17,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'MultiV — Professional Verification Bot',
+  title: 'MultiV | Verification Bot',
   description: 'Secure your Discord server with MultiV. 7 verification methods, real-time logs, CAPTCHA, and more.',
   keywords: 'discord bot, verification, captcha, anti-spam, moderation',
   openGraph: {
