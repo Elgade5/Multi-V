@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description: 'Secure your Discord server with MultiV. 7 verification methods, real-time logs, CAPTCHA, and more.',
   keywords: 'discord bot, verification, captcha, anti-spam, moderation',
   openGraph: {
-    title: 'MultiV — Professional Verification Bot',
+    title: 'MultiV | Verification Bot',
     description: 'Secure your Discord server with MultiV. 7 verification methods, real-time logs, CAPTCHA, and more.',
     url: 'https://multi-v.netlify.app',
     siteName: 'MultiV',
