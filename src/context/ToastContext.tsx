@@ -1,6 +1,7 @@
 'use client'
 
 import React, { createContext, useContext, useState, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import { ToastMessage } from '@/types'
 import Toast from '@/components/Toast'
 
@@ -16,6 +17,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   const addToast = useCallback((toast: Omit<ToastMessage, 'id'>) => {
     const id = Math.random().toString(36).slice(2)
     setToasts(prev => [...prev, { ...toast, id }])
+
     setTimeout(() => {
       setToasts(prev => prev.filter(t => t.id !== id))
     }, 4500)
@@ -28,11 +30,16 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   return (
     <ToastContext.Provider value={{ addToast }}>
       {children}
-      <div className="fixed top-4 right-4 z-[99999] flex flex-col gap-3 max-w-sm w-full pointer-events-none">
-        {toasts.map(toast => (
-          <Toast key={toast.id} toast={toast} onClose={() => removeToast(toast.id)} />
-        ))}
-      </div>
+
+      {typeof window !== 'undefined' &&
+        createPortal(
+          <div className="fixed top-4 right-4 z-[2147483647] flex flex-col gap-3 max-w-sm w-full pointer-events-none">
+            {toasts.map(toast => (
+              <Toast key={toast.id} toast={toast} onClose={() => removeToast(toast.id)} />
+            ))}
+          </div>,
+          document.body
+        )}
     </ToastContext.Provider>
   )
 }
