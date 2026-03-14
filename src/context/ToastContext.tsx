@@ -33,7 +33,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
 
       {typeof window !== 'undefined' &&
         createPortal(
-          <div className="fixed top-4 right-4 z-[2147483647] flex flex-col gap-3 max-w-sm w-full pointer-events-none">
+          <div className="fixed top-20 right-6 z-[2147483647] flex flex-col gap-3 max-w-sm w-full pointer-events-none">
             {toasts.map(toast => (
               <Toast key={toast.id} toast={toast} onClose={() => removeToast(toast.id)} />
             ))}
